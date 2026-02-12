@@ -1,0 +1,6 @@
+env/
+embeddings/bio_embedding_extrinsic
+.DS_Store
+__pycache__/
+NER_biLSTM-CNN-master/__pycache__/
+NER_biLSTM-CNN-master/models
