@@ -1,16 +1,48 @@
+# ===== OS / Editor =====
 .DS_Store
+Thumbs.db
 .vscode/
+.idea/
 
+# ===== Python =====
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
 
-# big folders
+# ===== Jupyter / Colab =====
+.ipynb_checkpoints/
+*.ipynb
+
+# ===== Logs / checkpoints =====
+*.log
+*.out
+*.err
+wandb/
+runs/
+checkpoints/
+*.pth
+*.pt
+*.bin
+*.ckpt
+
+# ===== Data / Models / Outputs (keep folders but not contents) =====
 data/**
-datasets/**
 models/**
 outputs/**
 
-# keep folders
+# Keep directory placeholders
 !data/.gitkeep
 !models/.gitkeep
 !outputs/.gitkeep
+
