@@ -1,20 +1,16 @@
-# big folders (do not version)
-data/
-datasets/
-models/
-outputs/
-out_*/
-
-# checkpoints
-*.pth
-*.pt
-*.bin
-*.safetensors
-
-# logs
-*.log
-
-# misc
-__pycache__/
 .DS_Store
 .vscode/
+
+__pycache__/
+*.pyc
+
+# big folders
+data/**
+datasets/**
+models/**
+outputs/**
+
+# keep folders
+!data/.gitkeep
+!models/.gitkeep
+!outputs/.gitkeep
