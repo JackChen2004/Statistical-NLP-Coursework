@@ -265,3 +265,28 @@ python RE_Test_Pred.py
 
 Next step: experiment with different RE models.
 
+运行方式
+A. 生成 gold RE 数据
+python PrepareREData.py
+B. 训练 CNN-RE（新增）
+python -m re_cnn.train_re \
+  --train re_data_gold/re_train_gold.jsonl \
+  --dev re_data_gold/re_dev_gold.jsonl \
+  --emb embeddings/biowordvec_bc5_subset.txt \
+  --out_dir re_models
+C. Gold test 上评估（新增）
+python -m re_cnn.eval_re \
+  --model re_models/re_cnn_best.keras \
+  --test re_data_gold/re_test_gold.jsonl \
+  --emb embeddings/biowordvec_bc5_subset.txt
+D. 端到端：NER 预测实体 -> 构造 RE 输入 -> RE 预测（新增）
+python RE_Test_Pred.py
+python -m re_cnn.build_pred_jsonl \
+  --pred_entities pipeline_outputs/test_pred_entities.jsonl \
+  --out_jsonl pipeline_outputs/re_test_pred.jsonl
+
+python -m re_cnn.predict_re \
+  --in_jsonl pipeline_outputs/re_test_pred.jsonl \
+  --out_jsonl pipeline_outputs/re_test_pred_pred.jsonl \
+  --out_tsv pipeline_outputs/re_test_pred_pred.tsv
+
