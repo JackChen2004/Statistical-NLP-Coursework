@@ -1,48 +1,59 @@
-# ===== OS / Editor =====
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-
-# ===== Python =====
+# ========================
+# Python
+# ========================
 __pycache__/
-*.py[cod]
+*.pyc
 *.pyo
 *.pyd
-*.so
-*.egg-info/
-dist/
-build/
-.venv/
+
+# ========================
+# Environment
+# ========================
+.env
+*.env
 venv/
-env/
-pip-wheel-metadata/
-.pytest_cache/
-.mypy_cache/
+conda/
+.env/
 
-# ===== Jupyter / Colab =====
-.ipynb_checkpoints/
-*.ipynb
-
-# ===== Logs / checkpoints =====
+# ========================
+# Logs
+# ========================
+logs/
 *.log
-*.out
-*.err
-wandb/
-runs/
-checkpoints/
-*.pth
+
+# ========================
+# Model checkpoints
+# ========================
+checkpoint/
 *.pt
 *.bin
-*.ckpt
+*.safetensors
 
-# ===== Data / Models / Outputs (keep folders but not contents) =====
-data/**
-models/**
-outputs/**
+# ========================
+# Data cache
+# ========================
+*_cache/
+train_cache/
+dev_cache/
+test_cache/
 
-# Keep directory placeholders
-!data/.gitkeep
-!models/.gitkeep
-!outputs/.gitkeep
+# ========================
+# HuggingFace cache (optional)
+# ========================
+.cache/
+huggingface/
 
+# ========================
+# OS files
+# ========================
+.DS_Store
+
+# ========================
+# Jupyter
+# ========================
+.ipynb_checkpoints/
+
+# ========================
+# VSCode
+# ========================
+.vscode/
